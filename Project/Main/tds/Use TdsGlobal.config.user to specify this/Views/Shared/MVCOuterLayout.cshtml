@@ -1,0 +1,25 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.ExperienceForms.Mvc.Html
+@using Sitecore.Mvc.Analytics.Extensions
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@Html.Sitecore().Field("title", new { DisableWebEdit = true })</title>
+    @Html.Sitecore().VisitorIdentification()
+    @Html.RenderFormStyles()
+    @Html.RenderFormScripts()
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href='/_res/fullcalendar.min.css' rel='stylesheet' />
+    <link href='/_res/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+    <script src='/_res/lib/moment.min.js'></script>
+    <script src='/_res/lib/jquery.min.js'></script>
+    <script src='/_res/fullcalendar.min.js'></script>
+</head>
+<body style="padding-top: 70px;">
+<main role="main" class="container">
+    @RenderBody()
+</main>
+    
+</body>
+</html>

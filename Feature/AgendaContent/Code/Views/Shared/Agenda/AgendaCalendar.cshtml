@@ -1,0 +1,227 @@
+﻿@model Recommender.AgendaContent.Models.AgendaModel
+@{
+
+    if (Model.PrimaryTopic.Value > Model.PrimaryTrack.Value && Model.PrimaryTopic.Key == "Commerce")
+    {
+        Model.PrimaryTrack = Model.PrimaryTopic;
+    }
+}
+<style>
+    body {
+        margin: 40px 10px;
+        padding: 0;
+        font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+        font-size: 14px;
+    }
+
+    #calendar {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    #calendar2 {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .toggleCalendarButton {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+
+    .calToggle {
+        margin-top: 20px;
+    }
+</style>
+<link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet' />
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
+<script>
+    $(document).ready(function() {
+        var startDate = new Date('2018/10/9');
+        $('#calendar').fullCalendar({
+            header: {
+                left: '',
+                right: 'agendaFourDay,listWeek',
+            },
+            views: {
+                agendaFourDay: {
+                    buttonText: 'Agenda',
+                    type: 'agenda',
+                    duration: { days: 3 },
+                    minTime: "06:00:00"
+                },
+                timelineFourDay: {
+                    buttonText: 'Timeline',
+                    type: 'timeline',
+                    duration: { days: 4 },
+                    minTime: "06:00:00",
+                    maxTime: "20:00:00",
+                    slotDuration: '00:15'
+                },
+                listWeek: {
+                    buttonText: 'List',
+                    minTime: "06:00:00",
+                    duration: { days: 4 },
+                }
+            },
+            eventRender: function(eventObj, $el) {
+                $el.popover({
+                    title: eventObj.title,
+                    content: eventObj.description,
+                    trigger: 'hover',
+                    placement: 'left',
+                    container: 'body',
+                    html:true
+                });
+            },
+            allDaySlot:false,
+            height: 'auto',
+            defaultView: 'agendaFourDay',
+            defaultDate: startDate,
+            navLinks: true, // can click day/week names to navigate views
+            //editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events:@Html.Raw(Model.AttendeeSessionsJson),
+            resources:@Html.Raw(Model.RoomResourcesJson),
+            resourceLabelText: 'Rooms',
+            resourceGroupField: 'building',
+            schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives'
+        });
+
+        $('#calendar2').fullCalendar({
+            header: {
+                left: '',
+                //center: 'title',
+                right: 'listWeek'
+            },
+            views: {
+                agendaFourDay: {
+                    buttonText: 'Agenda',
+                    type: 'agenda',
+                    duration: { days: 4 },
+                    minTime: "06:00:00"
+                },
+                timelineFourDay: {
+                    buttonText: 'Timeline',
+                    type: 'timeline',
+                    duration: { days: 4 },
+                    minTime: "06:00:00",
+                    maxTime: "20:00:00",
+                    slotDuration: '00:15'
+                },
+                listWeek: {
+                    buttonText: 'List',
+                    minTime: "06:00:00",
+                    start:'10/8/2018',
+                    end:'10/11/2018',
+                    title:'Oct 8-11'
+                }
+            },
+            eventRender: function(eventObj, $el) {
+                $el.popover({
+                    title: eventObj.title,
+                    content: eventObj.description,
+                    trigger: 'hover',
+                    placement: 'left',
+                    container: 'body',
+                    html:true
+                });
+            },
+            allDaySlot:false,
+            height: 'auto',
+            defaultView: 'listWeek',
+            defaultDate: startDate,
+            navLinks: true, // can click day/week names to navigate views
+            //editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events:@Html.Raw(Model.AllSessionsJson),
+            resources:@Html.Raw(Model.RoomResourcesJson),
+            resourceLabelText: 'Rooms',
+            resourceGroupField: 'building',
+            schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives'
+        });
+
+        $('.toggleCalendarButton').click(function() {
+            $('.calToggle').toggle();
+            $('#calendar2').fullCalendar('rerenderEvents');
+            if($('#calendar').parent().css('display')=='none'){
+                $('.toggleCalendarButton').attr('value','View Recommended Agenda');
+            }
+            else{
+                $('.toggleCalendarButton').attr('value','View Full Schedule');
+            }
+        });
+
+        $('.toggle').click(function() {
+            $('.toggleDiv').toggle();
+        });
+        $('.howItWorks').popover({
+            title: "How it works",
+                        content: "<ul><li>Fetches most recent social media posts and stores in xDB while creating xProfile.</li><li>Scores the posts using Azure ML web service to fetch primary and seconday Tracks. </li><li>Scores the posts using another Azure ML web service to fetch Topic scores.</li><li>Uses primary track to fill inital agenda. Resolves conflicts and fill gaps in agenda using scored Topics.</li><ul>",
+            trigger: 'hover',
+            placement: 'left',
+            container: 'body',
+            html:true
+        });
+
+    });
+</script>
+
+@if (Model.AttendeeSessions.Count > 0)
+{
+
+    <div id="sides">
+        <div id="left">
+            <h6 style="float: left; padding-right: 5px;">Primary Track:</h6>
+            <span style="float:left;width:300px; padding-bottom:10px">@Model.PrimaryTrack.Key</span>
+            <h6 style="float:left;padding-right: 5px ">Primary Topics:</h6>
+            <span style="width:350px;float:left;padding-bottom:10px"> @Model.PrimaryTopic.Key<br /> @Model.SecondaryTopic.Key<br /> @Model.TertiaryTopic.Key</span>
+        </div>
+    </div>
+    <div>
+        <div>
+            <input value="View Full Schedule" type="submit" class="form-control btn-success toggleCalendarButton">
+        </div>
+    </div>
+    <div class="calToggle">
+        <h2 style="text-align: center;">Recommended Agenda</h2>
+        <div id='calendar'></div>
+    </div>
+    <div class="calToggle" style="display: none">
+        <h2 style="text-align: center;">Full Schedule</h2>
+        <div id='calendar2'></div>
+    </div>
+
+    <div>
+        <a href="#showData" class="toggle">Show Data</a>
+        <div id="showData" class="toggleDiv" style="display: none">
+            <h4>Twitter Handle: @Model.AttendeeProfile.TwitterHandle</h4>
+            <h4>Posts: @Model.AttendeeProfile.PostsProcessed</h4>
+            <h4>Contact Id: @Model.Contact.Id</h4>
+
+            <span>
+                <h5>Track Scores: </h5>
+                Primary Track: @Html.Raw(Model.PrimaryTrack.Key + " " + Model.PrimaryTrack.Value) <br />
+                Secondary Track: @Html.Raw(Model.SecondaryTrack.Key + " " + Model.SecondaryTrack.Value) <br />
+                <h5>Topic Scores: </h5>
+                @foreach (var kvp in Model.TopicScores.OrderByDescending(x => x.Value))
+                {
+                    @Html.Raw(kvp.Key + " " + kvp.Value)
+                    <br />
+                }
+            </span>
+        </div>
+    </div>
+}
+else
+{
+    <div class="calToggle">
+        <h2 style="text-align: center;">Full Schedule</h2>
+        <div id='calendar2'></div>
+    </div>
+}
+
+<div>
+    <br />
+</div>

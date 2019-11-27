@@ -1,0 +1,45 @@
+----item----
+version: 1
+id: {76FC06E8-8567-40E4-A7C2-B165F5D6BEDA}
+database: master
+path: /sitecore/content/Labels/Topics/Content management and strategy
+parent: {D7F91022-72AF-4513-85B0-7B04567152DA}
+name: Content management and strategy
+master: {00000000-0000-0000-0000-000000000000}
+template: {81EF8A20-7354-4D77-BA6E-A834FBA8EC0B}
+templatekey: Label
+created: 20180913T141324Z
+
+----version----
+language: en
+version: 1
+revision: 797114d4-c809-4519-848b-b9f05d880112
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20180913T141324Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+797114d4-c809-4519-848b-b9f05d880112
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20180913T141324Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

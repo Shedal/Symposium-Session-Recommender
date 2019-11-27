@@ -1,0 +1,130 @@
+----item----
+version: 1
+id: {900D2E08-D010-4B12-9A7B-311051D13A72}
+database: master
+path: /sitecore/content/Sessions/TheRoadToAmazonAndBeyond
+parent: {88662E3F-6032-4F8F-BE04-4AA0E44B034A}
+name: TheRoadToAmazonAndBeyond
+master: {00000000-0000-0000-0000-000000000000}
+template: {93DAE0B7-F5C9-4AC6-B627-C5C8D5ADB8F4}
+templatekey: Symposium Session
+created: 20180914T014316Z
+
+----version----
+language: en
+version: 1
+revision: 0b890e1d-9348-4958-a23a-137f5097e218
+
+----field----
+field: {4C99A1FD-700A-4C5E-85C2-9DDC784D1CE2}
+name: Title
+key: title
+content-length: 29
+
+The road to Amazon and beyond
+----field----
+field: {4B147317-559A-4779-B12D-CBDB151E7A6E}
+name: Description
+key: description
+content-length: 469
+
+Are you considering revamping your old commerce site?  If so, this session is for you. Discover how to get started with Sitecore Experience Commerce 9 and see how you can create an online store that rivals, or goes beyond, the features and functionality of Amazon and AliExpress. Weâll explore using artificial intelligence and machine learning to converse with Alexa and chat bots, calling for advice on a purchase to social media, complying with the GDPR, and more.
+----field----
+field: {663DE592-7F35-405A-855D-E9357C786A76}
+name: Session Date
+key: session date
+content-length: 24
+
+Tuesday, October 9, 2018
+----field----
+field: {94C0F87E-EAEB-4D28-9E27-09E404F1899F}
+name: Start Time
+key: start time
+content-length: 15
+
+20181009T124500
+----field----
+field: {9459D422-FC77-4AEF-BC4A-254E9ED882DD}
+name: End Time
+key: end time
+content-length: 15
+
+20181009T133000
+----field----
+field: {AEB4386D-D32A-4F65-AD6B-1B0B3052A376}
+name: Speakers
+key: speakers
+content-length: 48
+
+Vasiliy Fomichev, Technical Director, XCentium
+
+----field----
+field: {E99C9AC9-D3A6-4D38-9463-79C6D3810BEC}
+name: Room
+key: room
+content-length: 13
+
+Swan, Pelican
+----field----
+field: {83B28923-24B5-4AA8-8DFE-EEFBC7851844}
+name: Track
+key: track
+content-length: 50
+
+Marketing strategy, innovation, and best practices
+----field----
+field: {62D8FB1F-A64E-4D03-8D29-CF0D81042685}
+name: Track Label
+key: track label
+content-length: 48
+
+Marketing Strategy Innovation and Best Practices
+----field----
+field: {26226E4C-B852-402C-891A-04488FEFAB29}
+name: Topic Label
+key: topic label
+content-length: 8
+
+Commerce
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20180914T014316Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+0b890e1d-9348-4958-a23a-137f5097e218
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20180918T050556Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

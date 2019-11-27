@@ -1,0 +1,73 @@
+----item----
+version: 1
+id: {AEA58611-3E4B-4373-9743-10F3753030ED}
+database: master
+path: /sitecore/content/CognitiveServices/Topics
+parent: {081CC66E-D8A8-4289-B480-949DFEA95EB0}
+name: Topics
+master: {00000000-0000-0000-0000-000000000000}
+template: {F4750BA4-B7AD-4D29-AC7D-C912DF5F392A}
+templatekey: CognitiveServicesEndpoint
+created: 20180916T010144Z
+
+----version----
+language: en
+version: 1
+revision: 502e2125-afeb-4275-bb8b-e6559bbb5b8f
+
+----field----
+field: {76402623-5736-4A3A-B02B-D6562CF91876}
+name: EndpointUrl
+key: endpointurl
+content-length: 225
+
+<link linktype="external" url="https://ussouthcentral.services.azureml.net/workspaces/eea33b170ac048f491d66e0175919764/services/2fd798b458fd4d80aed8fceaa1fb9bb2/execute?api-version=2.0&amp;details=true" anchor="" target="" />
+----field----
+field: {84F7DC24-EB17-40B2-B9F6-57ED0DD3BE7A}
+name: ApiKey
+key: apikey
+content-length: 88
+
+wOcNlLw++IGJ0xMKoleO4kANVYh9OnrdHq/iNaOLJrnOdsLcfgmh/2SB1vwlzJF2vDOjd2ePcbqnzs6Q2g0GXQ==
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20180916T010144Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+502e2125-afeb-4275-bb8b-e6559bbb5b8f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20180916T205356Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

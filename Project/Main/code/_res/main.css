@@ -1,0 +1,11 @@
+﻿@media (min-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+}
+
+input.btn-loading:disabled {
+    background: #FFF url(/_res/images/preloader.gif) no-repeat center center;
+    border-color: #FFF;
+    height: 48px;
+}

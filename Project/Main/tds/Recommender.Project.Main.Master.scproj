@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>7158fde3-e117-485d-8c89-00ed4d6bf924</ProjectGuid>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>Recommender.Project.Main.Master</SingleAssemblyName>
+    <UseWebConfigReplacement>false</UseWebConfigReplacement>
+    <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
+    <LegacyFileReplacement>false</LegacyFileReplacement>
+    <AssemblyName>Recommender.Project.Main.Master</AssemblyName>
+    <Name>Recommender.Project.Main.Master</Name>
+    <RootNamespace>Recommender.Project.Main.Master</RootNamespace>
+    <ManageRoles>False</ManageRoles>
+    <SitecoreDatabase>master</SitecoreDatabase>
+    <AssemblyStatus>Exclude</AssemblyStatus>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'remote' ">
+    <DebugSymbols>true</DebugSymbols>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+    <OutputPath>.\bin\remote\</OutputPath>
+    <DisableFileDeployment>False</DisableFileDeployment>
+    <EnableValidations>False</EnableValidations>
+    <ValidationSettingsFilePath>.\Recommender.Project.Main.Master_remote.xml</ValidationSettingsFilePath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Azure' ">
+    <DebugSymbols>true</DebugSymbols>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+    <OutputPath>.\bin\Azure\</OutputPath>
+    <DisableFileDeployment>False</DisableFileDeployment>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <SitecoreItem Include="sitecore\content.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Home.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Layouts.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Layouts\MVC Layout.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Placeholder Settings.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Placeholder Settings\main.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+  </ItemGroup>
+  <ItemGroup>
+    <BundledProject Include="..\..\..\Feature\AgendaContent\Tds\Recommender.AgendaContent.Master.scproj">
+      <ProjectId>{64006928-785e-4a43-ac51-ccfe8bee9322}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\..\Feature\AttendeeForm\tds\Recommender.AttendeeForm.Master.scproj">
+      <ProjectId>{216e6035-05af-4508-b683-3b3d82211de8}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\..\Foundation\CognitiveServices\tds\Recommender.Foundation.CognitiveServices.Master.scproj">
+      <ProjectId>{20a898e3-b010-43c7-96d1-cf1ed3632d0a}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\..\Foundation\CollectionModel\tds\Recommender.Foundation.CollectionModel.Master.scproj">
+      <ProjectId>{105e8a4b-c7f8-4678-a332-212cb908bf55}</ProjectId>
+    </BundledProject>
+  </ItemGroup>
+  <ItemGroup>
+    <SourceWebProjects Include="{040dcd58-8e50-4ced-85c1-2c178ba76fa9}|Foundation\CognitiveServices\code\Recommender.Foundation.CognitiveServices.csproj">
+      <SourceWebPhysicalPath>..\..\..\Foundation\CognitiveServices\code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Recommender.Foundation.CognitiveServices.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>040dcd58-8e50-4ced-85c1-2c178ba76fa9</SourceWebProjectId>
+    </SourceWebProjects>
+    <SourceWebProjects Include="{25f7e739-8be5-48a5-a59f-c38f38fd626a}|Feature\AttendeeForm\code\Recommender.AttendeeForm.csproj">
+      <SourceWebPhysicalPath>..\..\..\Feature\AttendeeForm\code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Recommender.AttendeeForm.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>25f7e739-8be5-48a5-a59f-c38f38fd626a</SourceWebProjectId>
+    </SourceWebProjects>
+    <SourceWebProjects Include="{293fb099-0716-4692-8e0d-85ac1a7ed6be}|Foundation\CollectionModel\code\Recommender.Foundation.CollectionModel.csproj">
+      <SourceWebPhysicalPath>..\..\..\Foundation\CollectionModel\code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Recommender.Foundation.CollectionModel.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>293fb099-0716-4692-8e0d-85ac1a7ed6be</SourceWebProjectId>
+    </SourceWebProjects>
+    <SourceWebProjects Include="{2a5681ba-0f55-44ec-bb00-48e00ee54a50}|Foundation\TwitterApi\Code\Recommender.TwitterApi.csproj">
+      <SourceWebPhysicalPath>..\..\..\Foundation\TwitterApi\Code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Recommender.TwitterApi.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>2a5681ba-0f55-44ec-bb00-48e00ee54a50</SourceWebProjectId>
+    </SourceWebProjects>
+    <SourceWebProjects Include="{4f38a95e-6c8c-4de9-9dc9-fc82f59a58e2}|Feature\AgendaContent\Code\Recommender.AgendaContent.csproj">
+      <SourceWebPhysicalPath>..\..\..\Feature\AgendaContent\Code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Recommender.AgendaContent.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>4f38a95e-6c8c-4de9-9dc9-fc82f59a58e2</SourceWebProjectId>
+    </SourceWebProjects>
+    <SourceWebProjects Include="{63f59a0f-7298-4f50-aad7-c5efb9757025}|Project\Main\code\Recommender.Project.Main.csproj">
+      <SourceWebPhysicalPath>..\code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Recommender.Project.Main.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>63f59a0f-7298-4f50-aad7-c5efb9757025</SourceWebProjectId>
+    </SourceWebProjects>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Feature\AgendaContent\Code\Recommender.AgendaContent.csproj">
+      <Project>{4f38a95e-6c8c-4de9-9dc9-fc82f59a58e2}</Project>
+      <Name>Recommender.AgendaContent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Feature\AgendaContent\Tds\Recommender.AgendaContent.Master.scproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Feature\AttendeeForm\code\Recommender.AttendeeForm.csproj">
+      <Project>{25f7e739-8be5-48a5-a59f-c38f38fd626a}</Project>
+      <Name>Recommender.AttendeeForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Feature\AttendeeForm\tds\Recommender.AttendeeForm.Master.scproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\CognitiveServices\code\Recommender.Foundation.CognitiveServices.csproj">
+      <Project>{040dcd58-8e50-4ced-85c1-2c178ba76fa9}</Project>
+      <Name>Recommender.Foundation.CognitiveServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\CognitiveServices\tds\Recommender.Foundation.CognitiveServices.Master.scproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\CollectionModel\code\Recommender.Foundation.CollectionModel.csproj">
+      <Project>{293fb099-0716-4692-8e0d-85ac1a7ed6be}</Project>
+      <Name>Recommender.Foundation.CollectionModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\CollectionModel\tds\Recommender.Foundation.CollectionModel.Master.scproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\TwitterApi\Code\Recommender.TwitterApi.csproj">
+      <Project>{2a5681ba-0f55-44ec-bb00-48e00ee54a50}</Project>
+      <Name>Recommender.TwitterApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\code\Recommender.Project.Main.csproj">
+      <Project>{63f59a0f-7298-4f50-aad7-c5efb9757025}</Project>
+      <Name>Recommender.Project.Main</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
+</Project>

@@ -1,0 +1,130 @@
+----item----
+version: 1
+id: {723F5283-4DB3-48CF-874F-D9AD96A12A0B}
+database: master
+path: /sitecore/content/Sessions/TaxonomyAndRulesBasedProfileMappingGoFromZeroUserProfileTrackingTo100CoverageWithASinglePipelineExte
+parent: {88662E3F-6032-4F8F-BE04-4AA0E44B034A}
+name: TaxonomyAndRulesBasedProfileMappingGoFromZeroUserProfileTrackingTo100CoverageWithASinglePipelineExte
+master: {00000000-0000-0000-0000-000000000000}
+template: {93DAE0B7-F5C9-4AC6-B627-C5C8D5ADB8F4}
+templatekey: Symposium Session
+created: 20180914T015030Z
+
+----version----
+language: en
+version: 1
+revision: d57abf10-bc8b-4dc3-8298-78a2431c17fd
+
+----field----
+field: {4C99A1FD-700A-4C5E-85C2-9DDC784D1CE2}
+name: Title
+key: title
+content-length: 149
+
+Taxonomy and rules-based profile mapping: Go from zero user profile tracking to 100% coverage with a single pipeline extension and no content tagging
+----field----
+field: {4B147317-559A-4779-B12D-CBDB151E7A6E}
+name: Description
+key: description
+content-length: 751
+
+Assigning visitors to profiles is a core tenent of a content personalization strategy, however many organizations struggle with the initial setup and maintenance of content tagging, especially as the site grows. The task becomes even more challenging when you are working with sites that have large product catalogues or make use of âvirtualâ URL techniques such as wildcards or dynamic item resolving. In many cases, the profiles we want to associate with our users are based on meta data and taxonomies that already exist in our websites. In this session you will see how you can extract this meta data and taxonomy information to automatically profile users across the entire website without content authors having to tag a single content item.
+----field----
+field: {663DE592-7F35-405A-855D-E9357C786A76}
+name: Session Date
+key: session date
+content-length: 27
+
+Wednesday, October 10, 2018
+----field----
+field: {94C0F87E-EAEB-4D28-9E27-09E404F1899F}
+name: Start Time
+key: start time
+content-length: 15
+
+20181010T140000
+----field----
+field: {9459D422-FC77-4AEF-BC4A-254E9ED882DD}
+name: End Time
+key: end time
+content-length: 15
+
+20181010T144500
+----field----
+field: {AEB4386D-D32A-4F65-AD6B-1B0B3052A376}
+name: Speakers
+key: speakers
+content-length: 82
+
+Nick Allen, Technical Architect, Digital Consultan & Founder, Think Fresh Studio
+
+----field----
+field: {E99C9AC9-D3A6-4D38-9463-79C6D3810BEC}
+name: Room
+key: room
+content-length: 6
+
+Swan 4
+----field----
+field: {83B28923-24B5-4AA8-8DFE-EEFBC7851844}
+name: Track
+key: track
+content-length: 18
+
+Development and IT
+----field----
+field: {62D8FB1F-A64E-4D03-8D29-CF0D81042685}
+name: Track Label
+key: track label
+content-length: 18
+
+Development and IT
+----field----
+field: {26226E4C-B852-402C-891A-04488FEFAB29}
+name: Topic Label
+key: topic label
+content-length: 29
+
+Advanced Sitecore Development
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20180914T015030Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d57abf10-bc8b-4dc3-8298-78a2431c17fd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20180918T050606Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

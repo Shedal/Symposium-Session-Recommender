@@ -1,0 +1,31 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.ExperienceForms.Mvc.Html
+@using Sitecore.Mvc.Analytics.Extensions
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@Html.Sitecore().Field("title", new { DisableWebEdit = true })</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    @Html.Sitecore().VisitorIdentification()
+    @Html.RenderFormStyles()
+    @Html.RenderFormScripts()
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href='/_res/fullcalendar.min.css' rel='stylesheet' />
+    <link href='/_res/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+    <link href='/_res/scheduler.min.css' rel='stylesheet' />
+    <script src='/_res/lib/moment.min.js'></script>
+    @*JQuery referece is already added by RenderFormScripts*@
+    @*<script src='/_res/lib/jquery.min.js'></script>*@
+    <script src='/_res/fullcalendar.min.js'></script>
+    <script src='/_res/scheduler.min.js'></script>
+    <script src='/_res/attendeeForm.js'></script>
+    <link href="/_res/main.css" rel="stylesheet" />
+</head>
+<body>
+<main role="main" class="container">
+    @RenderBody()
+</main>
+    
+</body>
+</html>

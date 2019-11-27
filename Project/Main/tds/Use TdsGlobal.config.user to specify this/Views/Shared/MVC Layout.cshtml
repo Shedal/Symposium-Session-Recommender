@@ -1,0 +1,11 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Analytics.Extensions
+
+@{
+    Layout = "MVCOuterLayout.cshtml";
+}
+
+<h1>@Html.Sitecore().Field("title")</h1>
+<div>
+    @Html.Sitecore().Placeholder("main")
+</div>

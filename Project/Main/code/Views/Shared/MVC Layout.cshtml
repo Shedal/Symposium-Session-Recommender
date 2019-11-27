@@ -1,0 +1,23 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Analytics.Extensions
+
+@{
+    Layout = "MVCOuterLayout.cshtml";
+}
+
+<h1>@Html.Sitecore().Field("title")</h1>
+<img class="epamLogo" src="https://cdn.slidesharecdn.com/profile-photo-EPAMSystems-96x96.jpg?cb=1523597940" alt="Logo" style="float:right; margin-top:-75px;">
+<div class="symHeader">
+    <a class="symHeader" href="#" class="howItWorks">How it works</a><br />
+    <a class="symHeader" href="https://www.epam.com/about/who-we-are/events/2018/sitecore-symposium-2018" target="blank">EPAM - Platinum Sponsor</a><br />
+    <a class="symHeader" href="https://symposium.sitecore.com" target="blank">Symposium Website</a><br />
+    <a class="symHeader" href="https://sitecore-symposium.coveo.com/search/#sort=relevancy" target="blank">Explore agenda using Coveo</a>
+    <span class="symHeader">
+        <a href="https://twitter.com/intent/tweet?screen_name=sitecorevarun&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @@sitecorevarun</a>
+        <a href="https://twitter.com/intent/tweet?screen_name=shedal&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @@shedal</a>
+    </span>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<div>
+    @Html.Sitecore().Placeholder("main")
+</div>

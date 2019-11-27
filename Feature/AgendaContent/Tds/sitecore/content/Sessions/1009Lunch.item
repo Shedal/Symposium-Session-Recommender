@@ -1,0 +1,94 @@
+----item----
+version: 1
+id: {F4560EA4-FBCE-4F2E-AFF5-4C368E460EDB}
+database: master
+path: /sitecore/content/Sessions/1009Lunch
+parent: {88662E3F-6032-4F8F-BE04-4AA0E44B034A}
+name: 1009Lunch
+master: {00000000-0000-0000-0000-000000000000}
+template: {93DAE0B7-F5C9-4AC6-B627-C5C8D5ADB8F4}
+templatekey: Symposium Session
+created: 20180916T001020Z
+
+----version----
+language: en
+version: 1
+revision: 7fc0401d-ce4d-4370-af97-912837814155
+
+----field----
+field: {4C99A1FD-700A-4C5E-85C2-9DDC784D1CE2}
+name: Title
+key: title
+content-length: 5
+
+Lunch
+----field----
+field: {663DE592-7F35-405A-855D-E9357C786A76}
+name: Session Date
+key: session date
+content-length: 26
+
+Wednesday, October 9, 2018
+----field----
+field: {94C0F87E-EAEB-4D28-9E27-09E404F1899F}
+name: Start Time
+key: start time
+content-length: 16
+
+20181009T133000Z
+----field----
+field: {9459D422-FC77-4AEF-BC4A-254E9ED882DD}
+name: End Time
+key: end time
+content-length: 16
+
+20181009T144500Z
+----field----
+field: {E99C9AC9-D3A6-4D38-9463-79C6D3810BEC}
+name: Room
+key: room
+content-length: 3
+
+TBD
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20180914T014319Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7fc0401d-ce4d-4370-af97-912837814155
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20180918T044438Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

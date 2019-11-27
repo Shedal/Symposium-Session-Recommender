@@ -1,0 +1,116 @@
+----item----
+version: 1
+id: {EA807D39-AF80-43FF-A0C5-71DD190B84C9}
+database: master
+path: /sitecore/system/Modules/PowerShell/Script Library/Import-Agenda
+parent: {A3572733-5062-43E9-A447-54698BC1C637}
+name: Import-Agenda
+master: {00000000-0000-0000-0000-000000000000}
+template: {DD22F1B3-BD87-4DB2-9E7D-F7A496888D43}
+templatekey: PowerShell Script
+created: 20180916T065902Z
+
+----field----
+field: {B1A94FF0-6897-47C0-9C51-AA6ACB80B1F0}
+name: Script
+key: script
+content-length: 2609
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$response = Invoke-WebRequest 'https://symposium.sitecore.com/data/routes/agenda/en.json' -UseBasicParsing
+$response = $response | select -expand Content
+
+$defaultEncoding = [System.Text.Encoding]::GetEncoding('ISO-8859-1')
+$utf8Bytes = $defaultEncoding.GetBytes($response)
+$decoded = [System.Text.Encoding]::UTf8.GetString($utf8bytes)
+
+$source = $decoded | ConvertFrom-Json
+
+$days = ($source.placeholders.main | ?{ $_.componentName -eq 'Agenda' })[0].fields.days
+
+$sessions = $days | %{
+    $_.fields.date.value -match '^(\d+)'
+    
+    $date = [DateTime]::Parse("2018-09-30").AddDays([int]::Parse($matches[0]))
+    
+    $_.fields.sessions | %{
+        $session = $_.fields
+        $session.PSObject.Properties | %{
+            if ($_.Value -and ($_.Value.GetType().FullName -eq "System.Management.Automation.PSCustomObject")) {
+                $session.($_.Name) = $_.Value.value
+            }
+        }
+        
+        if($session.speakers) {
+            $speakers = $session.speakers | %{
+                $_.fields.name.value + ", " + $_.fields.jobTitle.value + ", " + $_.fields.company.value
+            }
+            $session.speakers = $speakers -join "<br>" | Out-String
+        }
+        
+        $session.startTime = $date.Add([DateTime]::Parse($session.startTime).TimeOfDay)
+        $session.endTime = $date.Add([DateTime]::Parse($session.endTime).TimeOfDay)
+        $session | Add-Member date $date
+        
+        $session
+    }
+} | ?{ $_.GetType().FullName -eq "System.Management.Automation.PSCustomObject" }
+
+$sessions | %{
+    $itemName = ((Get-Culture).TextInfo.ToTitleCase($_.title) -replace '[^A-Za-z0-9]+','')[0..99] -join ''
+    $itemPath = "master:\content\Sessions\$itemName"
+    
+    "Importing: $itemName"
+    
+    if(Test-Path $itemPath) {
+        $item = Get-Item -Path $itemPath
+    } else {
+        $item = New-Item -Path "master:\content\Sessions" -Name $itemName -ItemType "Sym2018/Feature/Agenda/Symposium Session"
+    }
+    
+    $item.Title = $_.title
+    if($_.description) { $item.Description = $_.description }
+    if($_.date) { $item.'Session Date' = $_.date.ToString('D', [CultureInfo]::CreateSpecificCulture("en-us")) }
+    if($_.startTime) { $item.'Start Time' = $_.startTime }
+    if($_.endTime) { $item.'End Time' = $_.endTime }
+    if($_.room) { $item.Room = $_.room }
+    if($_.track) { $item.Track = $_.track }
+    if($_.type) { $item.Type = $_.type }
+    if($_.speakers) { $item.Speakers = $_.speakers }
+}
+
+""
+"DONE!"
+----version----
+language: en
+version: 1
+revision: 1a12e875-0a1c-4702-8a8a-430dc87b63f7
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20180916T065902Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1a12e875-0a1c-4702-8a8a-430dc87b63f7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20180924T213344Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
